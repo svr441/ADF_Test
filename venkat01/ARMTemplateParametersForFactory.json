@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "venkat01"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureSynapseAnalytics1_connectionString": {
+			"value": ""
+		},
+		"SQLConWithParams_connectionString": {
+			"value": ""
+		},
+		"SqlServer1_connectionString": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"SqlServer_venkat_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
+			"value": "connection"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://venkatstorage01.dfs.core.windows.net"
+		},
+		"AzureKeyVault_Dev_properties_typeProperties_baseUrl": {
+			"value": "https://dlscon.vault.azure.net/"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "DESKTOP-6DBJJQR\\thirapathaiah.p"
+		}
+	}
+}
