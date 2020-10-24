@@ -5,16 +5,24 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"linkedService": {
-						"referenceName": "AzureDataLakeStorage1",
-						"type": "LinkedServiceReference"
+					"dataset": {
+						"referenceName": "SourceDS",
+						"type": "DatasetReference"
 					},
-					"name": "ExcelSource"
+					"name": "EmpCSV"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "TarBS",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [],
-			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tformat: 'excel',\n\tfileSystem: 'venkat',\n\tfolderPath: 'EMP',\n\tsheetName: '',\n\tfirstRowAsHeader: false) ~> ExcelSource"
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> EmpCSV\nEmpCSV sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
 		}
 	}
 }
