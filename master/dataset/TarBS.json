@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Emp_outPut.txt",
 				"folderPath": "EMP/Output",
 				"fileSystem": "venkat"
 			},
