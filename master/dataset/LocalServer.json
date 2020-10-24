@@ -1,0 +1,23 @@
+{
+	"name": "LocalServer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLConWithParams",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"DBName": "Employee",
+				"ServerName": "DESKTOP-MSEM0J5\\SQLEXPRESS",
+				"UserName": "sa",
+				"Password": "admin123"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "",
+			"table": "EMPDatails"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

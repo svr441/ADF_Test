@@ -1,0 +1,56 @@
+{
+	"name": "DSEmployee",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLConWithParams",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"DBName": {
+					"value": "@dataset().DSDBName",
+					"type": "Expression"
+				},
+				"ServerName": {
+					"value": "@dataset().DSServerName",
+					"type": "Expression"
+				},
+				"UserName": {
+					"value": "@dataset().DSUserID",
+					"type": "Expression"
+				},
+				"Password": {
+					"value": "@dataset().DSPassword",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"DSDBName": {
+				"type": "String"
+			},
+			"DSServerName": {
+				"type": "String"
+			},
+			"DSUserID": {
+				"type": "String"
+			},
+			"DSPassword": {
+				"type": "String"
+			},
+			"TableName": {
+				"type": "String",
+				"defaultValue": "Employee"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().TableName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

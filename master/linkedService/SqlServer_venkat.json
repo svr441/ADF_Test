@@ -1,0 +1,17 @@
+{
+	"name": "SqlServer_venkat",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "local server",
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=DESKTOP-MSEM0J5\\SQLEXPRESS;initial catalog=Employee;user id=sa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwZTc3YTk1MC00NzIxLTRlMmItOWY5YS0wZjEwN2VkYjExZjIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "IR-Selfhosted",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"name": "SQLConWithParams",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"DBName": {
+				"type": "String",
+				"defaultValue": "Employee"
+			},
+			"ServerName": {
+				"type": "String",
+				"defaultValue": "DESKTOP-MSEM0J5\\SQLEXPRESS"
+			},
+			"UserName": {
+				"type": "String",
+				"defaultValue": "sa"
+			},
+			"Password": {
+				"type": "String",
+				"defaultValue": "admin123"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Data Source=@{linkedService().ServerName};Initial Catalog=@{linkedService().DBName};User ID=@{linkedService().UserName};Password=@{linkedService().Password}"
+		},
+		"connectVia": {
+			"referenceName": "IR-Selfhosted",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

@@ -1,0 +1,167 @@
+{
+	"name": "LoadDataWithParams",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data from file to db",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDS",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DSEmployee",
+						"type": "DatasetReference",
+						"parameters": {
+							"DSDBName": {
+								"value": "@pipeline().parameters.DBName",
+								"type": "Expression"
+							},
+							"DSServerName": {
+								"value": "@pipeline().parameters.ServerName",
+								"type": "Expression"
+							},
+							"DSUserID": {
+								"value": "@pipeline().parameters.UserID",
+								"type": "Expression"
+							},
+							"DSPassword": {
+								"value": "@pipeline().parameters.Password",
+								"type": "Expression"
+							},
+							"TableName": {
+								"value": "@pipeline().parameters.TableName",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			},
+			{
+				"name": "Log",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Copy data from file to db",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[SP_Pipeline_Log_Details]",
+					"storedProcedureParameters": {
+						"DatFactory": {
+							"value": {
+								"value": "@pipeline().DataFactory",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"PipelineName": {
+							"value": {
+								"value": "@pipeline().Pipeline",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"RunID": {
+							"value": {
+								"value": "@pipeline().RunId",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Time": {
+							"value": {
+								"value": "@pipeline().TriggerTime",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "SQLConWithParams",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"DBName": "Employee",
+						"ServerName": "DESKTOP-MSEM0J5\\SQLEXPRESS",
+						"UserName": "sa",
+						"Password": "admin123"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"ServerName": {
+				"type": "string",
+				"defaultValue": "DESKTOP-MSEM0J5\\SQLEXPRESS"
+			},
+			"DBName": {
+				"type": "string",
+				"defaultValue": "Employee"
+			},
+			"UserID": {
+				"type": "string",
+				"defaultValue": "sa"
+			},
+			"Password": {
+				"type": "string",
+				"defaultValue": "admin123"
+			},
+			"TableName": {
+				"type": "string",
+				"defaultValue": "EMPDatails"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-08-31T17:33:44Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
