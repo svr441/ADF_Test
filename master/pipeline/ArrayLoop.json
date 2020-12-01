@@ -1,0 +1,67 @@
+{
+	"name": "ArrayLoop",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.par_table",
+						"type": "Expression"
+					},
+					"isSequential": false,
+					"activities": [
+						{
+							"name": "Set variable2",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Schama",
+								"value": {
+									"value": "@split(item(),'.')[0]",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Append variable1",
+							"type": "AppendVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "TableName",
+								"value": {
+									"value": "@split(item(),'.')[1]",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"par_table": {
+				"type": "array",
+				"defaultValue": [
+					"schema.table1",
+					"schema.table2",
+					"schema.table3"
+				]
+			}
+		},
+		"variables": {
+			"Schama": {
+				"type": "String"
+			},
+			"TableName": {
+				"type": "Array"
+			}
+		},
+		"annotations": []
+	}
+}
