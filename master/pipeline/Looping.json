@@ -90,10 +90,14 @@
 													"FolderName": {
 														"value": "@variables('Folder')",
 														"type": "Expression"
-													}
+													},
+													"FileName": "\"\""
 												}
 											},
-											"fieldList": [],
+											"fieldList": [
+												"childItems",
+												"itemName"
+											],
 											"storeSettings": {
 												"type": "AzureBlobFSReadSettings"
 											},
