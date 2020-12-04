@@ -60,8 +60,7 @@
 							"dependsOn": [],
 							"userProperties": [
 								{
-									"name": "Foldername",
-									"value": "@item().name"
+									"name": "Foldername"
 								}
 							],
 							"typeProperties": {
