@@ -47,11 +47,7 @@
 						]
 					}
 				],
-				"userProperties": [
-					{
-						"name": "folder"
-					}
-				],
+				"userProperties": [],
 				"typeProperties": {
 					"items": {
 						"value": "@activity('Get Metadata1').output",
