@@ -132,6 +132,10 @@
 										"dependsOn": [],
 										"userProperties": [],
 										"typeProperties": {
+											"pipeline": {
+												"referenceName": "SQLDWTOBS",
+												"type": "PipelineReference"
+											},
 											"waitOnCompletion": true
 										}
 									}
