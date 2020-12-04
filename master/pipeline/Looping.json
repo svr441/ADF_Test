@@ -19,7 +19,8 @@
 						"referenceName": "DSADLS2",
 						"type": "DatasetReference",
 						"parameters": {
-							"FolderName": "venkat"
+							"FolderName": "venkat",
+							"FileName": "''\""
 						}
 					},
 					"fieldList": [
@@ -27,7 +28,8 @@
 						"itemName"
 					],
 					"storeSettings": {
-						"type": "AzureBlobFSReadSettings"
+						"type": "AzureBlobFSReadSettings",
+						"recursive": true
 					},
 					"formatSettings": {
 						"type": "DelimitedTextReadSettings"
@@ -122,18 +124,7 @@
 								"expression": {
 									"value": "@item().type==\"Folder\"",
 									"type": "Expression"
-								},
-								"ifTrueActivities": [
-									{
-										"name": "Execute Pipeline1",
-										"type": "ExecutePipeline",
-										"dependsOn": [],
-										"userProperties": [],
-										"typeProperties": {
-											"waitOnCompletion": true
-										}
-									}
-								]
+								}
 							}
 						}
 					]
