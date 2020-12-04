@@ -68,6 +68,18 @@
 									"value": "@item().type==\"Folder\"",
 									"type": "Expression"
 								},
+								"ifFalseActivities": [
+									{
+										"name": "Set variable3",
+										"type": "SetVariable",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"variableName": "Folder",
+											"value": "\"\""
+										}
+									}
+								],
 								"ifTrueActivities": [
 									{
 										"name": "Get Metadata2",
