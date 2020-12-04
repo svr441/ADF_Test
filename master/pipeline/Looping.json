@@ -60,7 +60,8 @@
 							"dependsOn": [],
 							"userProperties": [
 								{
-									"name": "Foldername"
+									"name": "Foldername",
+									"value": "@item().name"
 								}
 							],
 							"typeProperties": {
@@ -70,33 +71,60 @@
 								},
 								"ifTrueActivities": [
 									{
-										"name": "Execute Pipeline1",
-										"type": "ExecutePipeline",
+										"name": "Get Metadata2",
+										"type": "GetMetadata",
 										"dependsOn": [],
-										"userProperties": [
-											{
-												"name": "folder"
-											}
-										],
+										"policy": {
+											"timeout": "7.00:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
 										"typeProperties": {
-											"pipeline": {
-												"referenceName": "Looping_copy1",
-												"type": "PipelineReference"
+											"dataset": {
+												"referenceName": "DSADLS2",
+												"type": "DatasetReference",
+												"parameters": {
+													"FolderName": {
+														"value": "@variables('Folder')",
+														"type": "Expression"
+													}
+												}
 											},
-											"waitOnCompletion": true
+											"fieldList": [],
+											"storeSettings": {
+												"type": "AzureBlobFSReadSettings"
+											},
+											"formatSettings": {
+												"type": "DelimitedTextReadSettings"
+											}
 										}
 									}
 								]
+							}
+						},
+						{
+							"name": "Set variable2",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Folder",
+								"value": {
+									"value": "@item().name",
+									"type": "Expression"
+								}
 							}
 						}
 					]
 				}
 			}
 		],
-		"parameters": {
+		"variables": {
 			"Folder": {
-				"type": "string",
-				"defaultValue": "venkat"
+				"type": "String"
 			}
 		},
 		"annotations": []
