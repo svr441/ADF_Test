@@ -1,0 +1,21 @@
+{
+	"name": "LocalSqlServer",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault_Dev",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sec-bs-dev-constr"
+			}
+		},
+		"connectVia": {
+			"referenceName": "IR-Selfhosted",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
