@@ -89,13 +89,7 @@
 							"inputs": [
 								{
 									"referenceName": "DSADLS2",
-									"type": "DatasetReference",
-									"parameters": {
-										"Filename": {
-											"value": "@item().name",
-											"type": "Expression"
-										}
-									}
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [

@@ -5,11 +5,6 @@
 			"referenceName": "ls_adls",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"Filename": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
