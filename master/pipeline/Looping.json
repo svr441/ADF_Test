@@ -65,7 +65,7 @@
 							],
 							"typeProperties": {
 								"expression": {
-									"value": "@item().type==\"Folder\"",
+									"value": "@equals(item().type,'Folder')",
 									"type": "Expression"
 								},
 								"ifFalseActivities": [
