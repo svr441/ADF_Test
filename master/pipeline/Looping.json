@@ -130,10 +130,14 @@
 										"name": "Execute Pipeline1",
 										"type": "ExecutePipeline",
 										"dependsOn": [],
-										"userProperties": [],
+										"userProperties": [
+											{
+												"name": "folder"
+											}
+										],
 										"typeProperties": {
 											"pipeline": {
-												"referenceName": "SQLDWTOBS",
+												"referenceName": "Looping_copy1",
 												"type": "PipelineReference"
 											},
 											"waitOnCompletion": true
@@ -146,6 +150,12 @@
 				}
 			}
 		],
+		"parameters": {
+			"Folder": {
+				"type": "string",
+				"defaultValue": "venkat"
+			}
+		},
 		"annotations": []
 	}
 }
