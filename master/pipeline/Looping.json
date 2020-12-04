@@ -88,8 +88,14 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "DSADLS2",
-									"type": "DatasetReference"
+									"referenceName": "DelimitedText1",
+									"type": "DatasetReference",
+									"parameters": {
+										"path": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
