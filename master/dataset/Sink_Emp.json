@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "EMPNEW",
 				"folderPath": "001",
 				"fileSystem": "venkat"
 			},
