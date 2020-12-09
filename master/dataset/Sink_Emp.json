@@ -1,0 +1,352 @@
+{
+	"name": "Sink_Emp",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "001",
+				"fileSystem": "venkat"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "CANCELREASONSETIDASSIGNMENTSETID",
+				"type": "String"
+			},
+			{
+				"name": "CLOSEREASONSETIDASSIGNMENTSETID",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOAGREEDAMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOAMENDMENTEFFECTIVEDATE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOASSIGNEEID",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOASSIGNEETYPE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOCONTRACTNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOCONTRACTTYPEID",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOCREATEDBY",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOCREATIONDATE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOCURRENCYCODE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOCUSTPONUMBER",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEODATEAPPROVED",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEODATESIGNED",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEODATETERMINATED",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEODATETIMECANCELLED",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOENDDATE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOESTIMATEDAMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOEXEMPTCERTIFICATENUMBER",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOEXEMPTREASONCODE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOHOLDREASONCODE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOHOLDREASONCODESETID",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOHOLDUNTILDATE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOLASTREVRECOGDATE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOLASTUPDATEDATE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOLASTUPDATELOGIN",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOLASTUPDATEDBY",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEONETINVOICEFLAG",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOOUTPUTTAXCLASSIFICATIONCODE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOOVERALLRISKCODE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOSTARTDATE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOSTSCODE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOTAXEXEMPTIONCONTROL",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBASEPEOVERSIONTYPE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERBILLTOPEOACCOUNTNAME",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERCANCELREASON",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERCLOSEREASON",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERID",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERINVORGPEOORGANIZATIONNAME",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERLEGALENTITYPEONAME",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADEROWINGORGPEONAME",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERSHIPTOPEOACCOUNTNAME",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERSHIPTOSITEPEOLOCATION",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERSOLDTOPEOACCOUNTNAME",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERTRANSLATIONPEOCOGNOMEN",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERTRANSLATIONPEODESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERTRANSLATIONPEOLASTUPDATEDATE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTHEADERTRANSLATIONPEOVERSIONDESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTTYPEPEODESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTTYPEPEOINTERCOMPANYFLAG",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTTYPEPEOINTERPROJECTFLAG",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTTYPEPEOLASTUPDATEDATE",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTTYPEPEONAME",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERADDRESS1",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERADDRESS2",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERADDRESS3",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERADDRESS4",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERCITY",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERCOUNTRY",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERLASTUPDATEDATE",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERPARTYNAME",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERPARTYNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERPERSONFIRSTNAME",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERPERSONLASTNAME",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERPERSONMIDDLENAME",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERPOSTALCODE",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERSITELASTUPDATEDATE",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERSITEPARTYSITENAME",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERSITEPARTYSITENUMBER",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERSITEPARTYSITETYPE",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERSITESTARTDATEACTIVE",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERSITESTATUS",
+				"type": "String"
+			},
+			{
+				"name": "HDRSUPPLIERSTATE",
+				"type": "String"
+			},
+			{
+				"name": "HDRTAXCLASSPEOSETID",
+				"type": "String"
+			},
+			{
+				"name": "HOLDREASONSETIDASSIGNMENTSETID",
+				"type": "String"
+			},
+			{
+				"name": "ID",
+				"type": "String"
+			},
+			{
+				"name": "MAJORVERSION",
+				"type": "String"
+			},
+			{
+				"name": "OKCINVREVSMRYINVOICED",
+				"type": "String"
+			},
+			{
+				"name": "OKCINVREVSMRYREVENUE",
+				"type": "String"
+			},
+			{
+				"name": "OKCTYPETPEOLASTUPDATEDATE",
+				"type": "String"
+			},
+			{
+				"name": "PRICEBOOKHEADEREONAME",
+				"type": "String"
+			},
+			{
+				"name": "PRICEBOOKID",
+				"type": "String"
+			}
+		]
+	}
+}
